@@ -9,10 +9,10 @@ def cargar_datos():         # FUNCIÓN PARA REALIZAR LA CONEXIÓN A LA DB Y OBTE
 
     try:
         conexion_db = mysql.connector. connect(
-        host=" sq110.freesqldatabase.com",
-        user= " sq110833735",
+        host="sql10.freesqldatabase.com",
+        user= "sql10833735",
         password="9UeFiiSCXD",
-        database="sq110833735"
+        database="sql10833735"
         )
 
         consulta_sql = "SELECT * FROM ventas_vehiculos" 
