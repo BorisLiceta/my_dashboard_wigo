@@ -19,3 +19,12 @@ def precio_maximo(df):
 def precio_minimo(df):
     return df["precio_venta"].min()
 
+def ingreso_total(df):
+    return (df["precio_venta"] * df["cantidad"]).sum()
+
+def ticket_promedio(df):
+
+    if len(df) == 0:
+        return 0
+
+    return ingreso_total(df) / len(df)
