@@ -8,7 +8,7 @@ import mysql.connector
 def cargar_datos():         # FUNCIÓN PARA REALIZAR LA CONEXIÓN A LA DB Y OBTENER LA TABLA DE DATOS
 
     try:
-        conexion_db = mysql.connector. connect(
+        conexion_db = mysql.connector.connect(
         host="sql10.freesqldatabase.com",
         user= "sql10833735",
         password="9UeFiiSCXD",
