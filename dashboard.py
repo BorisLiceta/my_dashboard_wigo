@@ -4,6 +4,29 @@ from conexion import cargar_datos
 from indicadores import *
 from graficos import *
 
+def login():
+    if "autenticado" not in st.session_state:
+        st.session_state.autenticado = False
+
+    if st.session_state.autenticado:
+        return  True
+    
+    st.title("Inicio de sesión")
+
+    usuario = st.text_input("Usuario")
+    password = st.text_input(
+        "Contraseña",
+        type="password"
+    )
+    if st.button("Ingresar"):
+        if usuario == "admin" and password == "12345":
+
+            st.session_state.autenticado = True
+            st.rerun()
+
+    else:
+        st.error("Usuario o contraseña incorrecta")
+    return False
 
 df = cargar_datos() # UTILIZANDO LA FUNCIÓN QUE NOS DEVUELVE EL DATAFRAME (DF)
 
@@ -87,3 +110,11 @@ c6.metric("Precio más bajo", f"S/{precio_minimo(df_filtrado):,.2f}")
 
 st.plotly_chart(grafico_ventas(df_filtrado))  
 st.plotly_chart(grafico_promedio(df_filtrado)) 
+
+
+if st.sidebar.button("Cerrar sesión"):
+
+    st.session_state.autenticado = False
+    st.rerun()
+
+
