@@ -212,3 +212,13 @@ with cg8:
         grafico_tendencia(df_filtrado),
         use_container_width=True
     )
+    
+# =====================================
+# CERRAR SESIÓN
+# =====================================
+
+if st.sidebar.button("Cerrar sesión"):
+
+    st.session_state.autenticado = False
+    st.rerun()
+
