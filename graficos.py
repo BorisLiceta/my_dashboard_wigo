@@ -154,7 +154,7 @@ def grafico_top_modelos(df):
         modelos,
         x="modelo",
         y="cantidad",
-        title="Top 5 Modelos Vendidos",
+        title="Top 10 Modelos Vendidos",
         color="modelo",
         color_discrete_sequence=px.colors.qualitative.Vivid
     )
